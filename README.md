@@ -2,6 +2,28 @@
 
 A Python script that helps organize Secret Santa gift exchanges with couple constraints, while keeping assignments secret even from the organizer!
 
+## Quick Start
+
+```bash
+# 1. Clone and navigate
+git clone <repository-url>
+cd wichtel-script
+
+# 2. (Optional) Create and activate virtual environment
+python3 -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+
+# 3. Create your configuration
+cp config.example.json config.json
+# Edit config.json with your participants and email settings
+
+# 4. Test it first
+python3 wichtel.py config.json --dry-run
+
+# 5. Run for real
+python3 wichtel.py config.json
+```
+
 ## Features
 
 - ✅ Automatic matching that ensures everyone gives and receives exactly one gift
@@ -18,8 +40,105 @@ A Python script that helps organize Secret Santa gift exchanges with couple cons
 
 ## Installation
 
-1. Clone or download this script
-2. No additional Python packages needed - uses only standard library!
+### Step 1: Download the Script
+
+Clone or download this repository:
+
+```bash
+git clone <repository-url>
+cd wichtel-script
+```
+
+Or download the files directly and navigate to the folder.
+
+### Step 2: Verify Python Installation
+
+Check that you have Python 3.6 or higher installed:
+
+```bash
+python3 --version
+```
+
+If you don't have Python installed, download it from [python.org](https://www.python.org/downloads/).
+
+### Step 3: Virtual Environment (Optional but Recommended)
+
+While this script only uses Python's standard library and doesn't require any external packages, using a virtual environment is considered best practice for Python projects. It keeps your project isolated from other Python projects on your system.
+
+#### Do I need a virtual environment?
+
+**Short answer: No, but it's recommended.**
+
+- **Without virtual environment**: You can run the script directly with your system Python. This is fine for a simple one-time use.
+- **With virtual environment**: Better for keeping things organized and avoiding potential conflicts with other Python projects.
+
+#### Creating a Virtual Environment
+
+Choose the method for your operating system:
+
+**On Linux/Mac:**
+
+```bash
+# Create virtual environment
+python3 -m venv venv
+
+# Activate it
+source venv/bin/activate
+
+# You should see (venv) in your terminal prompt
+```
+
+**On Windows (Command Prompt):**
+
+```cmd
+# Create virtual environment
+python -m venv venv
+
+# Activate it
+venv\Scripts\activate.bat
+
+# You should see (venv) in your terminal prompt
+```
+
+**On Windows (PowerShell):**
+
+```powershell
+# Create virtual environment
+python -m venv venv
+
+# Activate it
+venv\Scripts\Activate.ps1
+
+# You should see (venv) in your terminal prompt
+```
+
+**Note:** If you get a permission error on Windows PowerShell, you may need to run:
+```powershell
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+```
+
+#### Deactivating the Virtual Environment
+
+When you're done, you can deactivate the virtual environment:
+
+```bash
+deactivate
+```
+
+#### Using the Script Later
+
+If you created a virtual environment, remember to activate it each time you want to run the script:
+
+```bash
+# Linux/Mac
+source venv/bin/activate
+
+# Windows (Command Prompt)
+venv\Scripts\activate.bat
+
+# Windows (PowerShell)
+venv\Scripts\Activate.ps1
+```
 
 ## Setup
 
