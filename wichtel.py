@@ -123,13 +123,24 @@ class SecretSanta:
 
         email_map = {p['name']: p['email'] for p in self.participants}
 
+        # Get email template
+        subject = self.email_config.get('subject', '🎄 Your Secret Santa Assignment')
+        message_template = self.email_config.get('message_template',
+            "Hello {giver},\n\n"
+            "You are the Secret Santa for: {receiver}\n\n"
+            "Happy gifting! 🎁\n"
+        )
+
         success_count = 0
         for giver, receiver in matching.items():
             giver_email = email_map[giver]
 
             if dry_run:
+                body = message_template.format(giver=giver, receiver=receiver)
                 print(f"Would send email to: {giver} ({giver_email})")
-                print(f"  Message: You are Secret Santa for {receiver}")
+                print(f"  Subject: {subject}")
+                print(f"  Message:\n{body}")
+                print("-" * 60)
                 print()
             else:
                 try:
