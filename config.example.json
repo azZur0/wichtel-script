@@ -1,0 +1,40 @@
+{
+  "participants": [
+    {
+      "name": "Alice",
+      "email": "[email protected]"
+    },
+    {
+      "name": "Bob",
+      "email": "[email protected]"
+    },
+    {
+      "name": "Charlie",
+      "email": "[email protected]"
+    },
+    {
+      "name": "Diana",
+      "email": "[email protected]"
+    },
+    {
+      "name": "Eve",
+      "email": "[email protected]"
+    },
+    {
+      "name": "Frank",
+      "email": "[email protected]"
+    }
+  ],
+  "couples": [
+    ["Alice", "Bob"],
+    ["Charlie", "Diana"]
+  ],
+  "email_config": {
+    "from_email": "[email protected]",
+    "password": "your-app-password-here",
+    "smtp_server": "smtp.gmail.com",
+    "smtp_port": 587,
+    "subject": "🎄 Your Secret Santa Assignment",
+    "message_template": "Hello {giver},\n\nYou are the Secret Santa for: {receiver}\n\nPlease prepare a gift for them!\n\nHappy holidays! 🎁\n"
+  }
+}
